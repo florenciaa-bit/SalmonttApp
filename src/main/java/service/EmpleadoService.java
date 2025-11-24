@@ -13,7 +13,6 @@ import java.util.List;
 public class EmpleadoService {
     private final List<Empleado> empleados = new ArrayList<>();
 
-    // Cargar empleados desde un archivo de texto
     public int cargarDesdeArchivo(String rutaArchivo) {
         empleados.clear();
 
@@ -23,8 +22,7 @@ public class EmpleadoService {
             while ((linea = br.readLine()) != null) {
                 if (linea.isBlank()) continue;
 
-                // Formato:
-                // rut;nombre;email;telefono;region;ciudad;calle;numero;cargo;area;sueldo;activo
+
                 String[] partes = linea.split(";");
                 if (partes.length < 12) {
                     System.out.println("Línea inválida: " + linea);
@@ -59,7 +57,7 @@ public class EmpleadoService {
         return empleados.size();
     }
 
-    // Cargar datos de ejemplo (por si el archivo falla o está vacío)
+
     public void cargarDatosEjemplo() {
         empleados.clear();
 
@@ -81,7 +79,7 @@ public class EmpleadoService {
         return empleados;
     }
 
-    //  Filtrar empleados por cargo
+
     public List<Empleado> filtrarPorCargo(String cargoBuscado) {
         List<Empleado> resultado = new ArrayList<>();
         for (Empleado e : empleados) {

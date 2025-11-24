@@ -15,11 +15,11 @@ public class Main {
 
         EmpleadoService servicio = new EmpleadoService();
 
-        // ✅ 1) Obtener la ruta correcta usando ArchivoUtil
+
         String ruta = ArchivoUtil.obtenerRutaDatosEmpleados();
         System.out.println("Cargando empleados desde: " + ruta);
 
-        // ✅ 2) Cargar empleados desde el archivo
+
         servicio.cargarDesdeArchivo(ruta);
 
         boolean salir = false;
@@ -58,7 +58,7 @@ public class Main {
         }
     }
 
-    // ====== MÉTODOS DE APOYO ======
+
     private static int leerEntero() {
         while (!sc.hasNextInt()) {
             System.out.print("Ingrese un número válido: ");
